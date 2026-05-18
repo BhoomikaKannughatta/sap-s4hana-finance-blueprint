@@ -1,0 +1,8 @@
+Company Code,House Bank ID,Account ID,Bank Name,Main G/L Account,Sub-Account G/L,Clearing Type,Payment Method (FBZP)
+M001,HDFC1,HD01,HDFC Bank Bangalore,12401000,12401001,Incoming Clearing,E (NEFT/RTGS)
+M001,HDFC1,HD01,HDFC Bank Bangalore,12401000,12401002,Outgoing Clearing,E (NEFT/RTGS)
+M001,ICIC1,IC01,ICICI Bank Bangalore,12401100,12401102,Outgoing Clearing,E (NEFT/RTGS)
+M002,SBIN1,SB01,SBI Bank Mumbai,12402000,12402002,Outgoing Clearing,E (NEFT/RTGS)
+M002,AXIS1,AX01,Axis Bank Mumbai,12402100,12402102,Outgoing Clearing,E (NEFT/RTGS)
+M003,DEUT1,DB01,Deutsche Bank Frankfurt,12403000,12403002,Outgoing Clearing,S (SEPA Credit Transfer)
+M003,COMM1,CB01,Commerzbank Berlin,12403100,12403102,Outgoing Clearing,S (SEPA Credit Transfer)
