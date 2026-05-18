@@ -1,0 +1,11 @@
+Step,Transaction Code,Configuration Description,Enterprise Entity Key,Assigned Integration Parameters
+1,OX05,Define Sales Organization,SO01 / SO03,SO01 (India Revenue Org) | SO03 (Germany Revenue Org)
+2,OVXI,Define Distribution Channel,DI (Direct Sales),Wholesale and Direct Corporate Sales Distribution Channel
+3,OVXB,Define Division,FI (Filters),Filters and Manufactured Parts Product Division Line
+4,OVX3,Assign Sales Organization to Company Code,Linkage Step,SO01 -> Company Code M001 | SO03 -> Company Code M003
+5,OVXG,Set up Sales Area Execution Node,Structural Framework,Combine: SO01 (Sales Org) -> DI (Dist. Channel) -> FI (Division)
+6,OVX6,Assign Sales Org / Dist. Channel to Plant,Logistics Link,Link SO01 + DI -> Mapped to Production Plant IN01
+7,OVXD,Define Shipping Points,SH01 / SH03,SH01 (Mumbai Outbound Gate) | SH03 (Stuttgart Outbound Gate)
+8,OVXC,Assign Shipping Point to Plant,Logistics Link,Shipping Point SH01 assigned to Plant IN01
+9,VKOA,Revenue Account Determination (ERL Key),Standard Domestic Revenue,Application V / Condition PR00 / SO01 -> G/L 30000000
+10,VKOA,Revenue Account Determination (ERS Key),Sales Deductions / Discounts,Application V / Condition KP01 / SO01 -> G/L 30100000
