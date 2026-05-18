@@ -1,0 +1,11 @@
+Technical Object,Config T-Code,Group / Role Key,Number Range Interval,Number Assignment Rule (BP to Vendor/Customer)
+Vendor Account Group,OBD3,DOMV (Domestic),100000 - 199999,Mapped via CVI (Customer-Vendor Integration)
+Vendor Account Group,OBD3,FORV (Foreign),200000 - 299999,Mapped via CVI (Customer-Vendor Integration)
+Customer Account Group,OBD2,DOMC (Domestic),300000 - 399999,Mapped via CVI (Customer-Vendor Integration)
+BP Number Range,BUCF,B1 (General BP),100000 - 399999,Flexible Same Numbering Enabled (BP Number = Vendor Number)
+BP Grouping Mapping,SPRO Switch,MGP1 (BP to DOMV),External Alignment,CVI Direction Mapping: BP Group MGP1 -> Vendor Group DOMV
+BP Role - General,BP,000000,N/A,Core address and generic organizational master data
+BP Role - FI Vendor,BP,FLVN00,N/A,Company Code Data Activation (Reconciliation Account Mapping)
+BP Role - MM Vendor,BP,FLVN01,N/A,Purchasing Organization Data Activation (PO Currency / Terms)
+BP Role - FI Customer,BP,FLCU00,N/A,Company Code Data Activation (Accounts Receivable Mapping)
+BP Role - SD Customer,BP,FLCU01,N/A,Sales Area Data Activation (Pricing / Shipping Rules)
