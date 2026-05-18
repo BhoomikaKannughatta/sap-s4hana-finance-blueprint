@@ -1,0 +1,41 @@
+COA,Account Group,FSV Node,From Account,To Account,Description,Account Group Examples
+MAOP,1000,ASSETS,10000000,10999999,Assets - Main Balance Sheet Parent Node,All Asset Categories
+MAOP,1100,NON_CURRENT_ASSETS,11000000,11099999,Non-Current Assets Folder,Long Term Assets
+MAOP,1110,FIXED_ASSETS,11100000,11199999,Fixed Assets,"Land, Buildings, Machinery"
+MAOP,1120,INTANGIBLE_ASSETS,11200000,11299999,Intangible Assets,"Software, Licenses"
+MAOP,1130,INVESTMENTS,11300000,11399999,Long-Term Investments,"Securities, Equity Investments"
+MAOP,1200,CURRENT_ASSETS,12000000,12099999,Current Assets Folder,Short Term Assets
+MAOP,1210,INVENTORY,12100000,12199999,Inventory Accounting,"Raw Materials, WIP, Finished Goods"
+MAOP,1220,RECEIVABLES,12200000,12299999,Accounts Receivable,Customer Subledger Balances
+MAOP,1230,ADVANCES,12300000,12399999,Advances & Prepayments,Vendor Advances / Prepaid Expenses
+MAOP,1240,CASH_BANK,12400000,12499999,Cash and House Bank Accounts,Main Banks & Clearing Accounts
+MAOP,2000,EQUITY_LIABILITIES,20000000,20999999,Equity and Liabilities - Main Balance Sheet Parent Node,Capital and Obligations
+MAOP,2100,EQUITY,21000000,21099999,Shareholder Equity,Paid up Capital
+MAOP,2110,RESERVES,21100000,21199999,Reserves & Surpluses,General Reserves
+MAOP,2120,CURRENT_YEAR_RESULT,21200000,21299999,Retained Earnings Balance Sheet Node,Current Year Profit/Loss Carryforward
+MAOP,2200,NON_CURRENT_LIABILITIES,22000000,22099999,Non-Current Liabilities Folder,Long-Term Debt
+MAOP,2210,LONG_TERM_LOANS,22100000,22199999,Long-Term Loans,Bank Loans / Debentures
+MAOP,2220,PROVISIONS_LT,22200000,22299999,Long-Term Provisions,Gratuity / Pension Provisions
+MAOP,2300,CURRENT_LIABILITIES,23000000,23099999,Current Liabilities Folder,Short-Term Obligations
+MAOP,2310,PAYABLES,23100000,23199999,Accounts Payable,Vendor Subledger Balances
+MAOP,2320,TAX_PAYABLES,23200000,23299999,Tax Payables,GST / VAT / Corporate Tax Provisions
+MAOP,2330,SHORT_TERM_LOANS,23300000,23399999,Short-Term Loans,Bank Overdrafts / Working Capital Loans
+MAOP,3000,REVENUE,30000000,39999999,Revenue - Main P&L Parent Node,Operating Income
+MAOP,3010,DOMESTIC_SALES,30100000,30199999,Domestic Revenue,Sales within country borders
+MAOP,3020,EXPORT_SALES,30200000,30299999,Export Revenue,International Sales
+MAOP,4000,EXPENSES,40000000,49999999,Expenses - Main P&L Parent Node,Operating Costs
+MAOP,5000,COGS,50000000,50999999,Cost of Goods Sold,Manufacturing Cost of Sales
+MAOP,5010,RAW_MATERIAL_CONS,50100000,50199999,Raw Material Consumption,Direct Material Costs
+MAOP,6000,ADMIN_EXPENSES,60000000,60999999,Administrative Expenses - Main Header,General Overhead Costs
+MAOP,6010,SALARIES,60100000,60199999,Employee Salaries,Staff Payroll
+MAOP,6020,RENT_UTILITIES,60200000,60299999,Rent & Utilities,Office Rent and Power
+MAOP,6030,IT_EXPENSES,60300000,60399999,IT Expenses,"Software licenses, Cloud infrastructure, Servers"
+MAOP,6040,MARKETING,60400000,60499999,Marketing & Promotion,Advertisements and campaigns
+MAOP,6050,TRAVEL,60500000,60599999,Travel Expenses,Business trips and transportation
+MAOP,6060,TRAINING,60600000,60699999,Training Expenses,Employee upskilling and development
+MAOP,7000,DEPRECIATION,70000000,70999999,Depreciation - Main Header,Non-cash wear and tear expenses
+MAOP,7010,ASSET_DEPRECIATION,70100000,70199999,Asset Depreciation,Machinery and building depreciation
+MAOP,8000,FINANCIAL_ITEMS,80000000,80999999,Financial Items - Main Header,Financial transaction variances
+MAOP,8010,INTEREST_EXPENSE,80100000,80199999,Interest Expense,Bank Loan Interest
+MAOP,8020,FOREX_GAIN_LOSS,80200000,80299999,Foreign Exchange Gain/Loss,Forex multi-currency revaluations
+MAOP,9000,TAXATION,90000000,90999999,Taxation - Main Header,Corporate fiscal responsibilities
