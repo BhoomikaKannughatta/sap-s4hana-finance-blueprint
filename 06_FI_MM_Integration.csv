@@ -1,0 +1,15 @@
+Step,Transaction Code,Configuration Description,Enterprise Entity Key,Assigned Valuation Parameter / G/L
+1,OX14,Define Valuation Level,Plant Level,Valuation occurs uniformly at Plant Level
+2,OX10,Define Material Management Plants,IN01 / IN02 / DE01,IN01 (M001 Plant) | IN02 (M002 Site) | DE01 (M003 Plant)
+3,OX09,Define Storage Locations,SL01 / SL02,Assigned natively inside Plants IN01 and DE01
+4,OX18,Assign Plant to Company Code,Linkage Step,Plant IN01 -> Company Code M001 | Plant DE01 -> Company Code M003
+5,OX08,Define Purchasing Organization,PU01 / PU03,PU01 (Indian Purchase Org) | PU03 (German Purchase Org)
+6,OX01,Assign Purchasing Org to Company Code,Linkage Step,PU01 -> Company Code M001 | PU03 -> Company Code M003
+7,OMSY,Maintain Company Code Material Control,Period Initialization,Set Active Fiscal Year: 2026 / Active Period: 05
+8,OBS2,Define Material Attributes,ROH / HALB / FERT,Enable QTY and Value updates at Valuation Area Level
+9,OBYC,Account Determination: BSX Key,Inventory Postings,Valuation Class 3000 (Raw Materials) -> G/L 12100000
+10,OBYC,Account Determination: WRX Key,GR/IR Clearing Account,Valuation Class 3000 -> G/L 23150000 (GR/IR Liability)
+11,OBYC,Account Determination: PRD Key,Price Variance Postings,Valuation Class 3000 -> G/L 40300000 (Material Variances)
+12,OMX2,Define Material Ledger Type,ML Type Definition,Create Material Ledger Type: MAML
+13,OMX3,Assign ML Type to Valuation Area,Valuation Area Link,Map Plants IN01 and DE01 to Material Ledger Type MAML
+14,CKMSTART,Material Ledger Production Startup,System Activation,Set Material Ledger status to Active for IN01 and DE01
