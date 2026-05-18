@@ -1,0 +1,5 @@
+Test Case ID,Company Code,Business Process Transaction,Debit Entry (Account & Cost Object),Credit Entry (Account & Cost Object),Testing Validation Criteria
+TS_GL_01,M002,General Ledger Posting (FB50),G/L 40100000 (Rent Expense) - INR 50000 | Cost Center: IN02_FIN,G/L 12401000 (HDFC Main Bank) - INR 50000,Document updates Leading Ledger (0L) and matches Cost Center allocation rules.
+TS_AP_01,M001,Vendor Invoice Verification (FB60),G/L 12100000 (Raw Material Inventory) - INR 120000 | Profit Center: PC_IN_MFG,BP Vendor 100000 (Subledger Trade Payable) - INR 120000,System triggers auto-posting to Reconciliation G/L 23100000 via CVI.
+TS_AP_02,M001,Automatic Payment Run (F110),BP Vendor 100000 (Subledger Clearing) - INR 120000,G/L 12401002 (HDFC Outgoing Clearing Bank) - INR 120000,Payment advice note generates automatically matching currency settings.
+TS_AR_01,M003,Customer Billing (FB70 / VF01),BP Customer 300000 (Trade Accounts Receivable) - EUR 80000,G/L 30000000 (Domestic Revenue) - EUR 80000 | Profit Center: PC_DE_SLS,Invoice maps correctly to Sales Area SO03, updating Revenue balances.
