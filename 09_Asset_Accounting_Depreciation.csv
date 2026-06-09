@@ -1,8 +1,25 @@
-Asset Class Key,Description,Assigned Main G/L Account,Accumulated Depreciation G/L,Depreciation Expense G/L,Depreciation Keys & Useful Life Rules
-Asset_1110,Freehold Land,11100000,N/A (Non-Depreciating),N/A,No depreciation calculated / Value tracked via raw historical cost
-Asset_1111,Factory Buildings,11110000,11110099 (Acc. Dep),70100000 (Dep. Exp),Straight Line Method (SLM) | 30 Years Useful Life / Standard Scrap 5%
-Asset_1112,Plant & Machinery,11120000,11120099 (Acc. Dep),70100000 (Dep. Exp),Written Down Value (WDV) | 15 Years Useful Life / Dynamic shift rule
-Asset_1113,Company Vehicles,11130000,11130099 (Acc. Dep),70100000 (Dep. Exp),Straight Line Method (SLM) | 7 Years Useful Life / High wear adjustments
-Asset_1114,Office Furniture & Fixtures,11140000,11140099 (Acc. Dep),70100000 (Dep. Exp),Straight Line Method (SLM) | 10 Years Useful Life / Uniform corporate rate
-Asset_1115,IT Equipment & Servers,11150000,11150099 (Acc. Dep),70100000 (Dep. Exp),Written Down Value (WDV) | 3 Years Useful Life / Rapid technology cycles
-Asset_1120,Intangible Software Licenses,11200000,11200099 (Acc. Amort),70100000 (Dep. Exp),Straight Line Amortization | 5 Years Useful Life / Zero scrap value
+Step,Transaction Code,Configuration Step Description,Technical Parameters,Operational Design & Troubleshooting Logic
+1,SPRO,Define Parallel Accounting Principles,Client Level,"Establish accounting regulations: IFRS (International Standards) and IAS (Local/Statutory Rules)"
+2,SPRO,Assign Accounting Principles to Ledger Groups,Client Level,Bind rules to target ledgers: Link IFRS to Leading Ledger 0L and IAS to Non-Leading Ledger L1
+3,ORFA,Copy Reference Chart of Depreciation,Client Level,Copy baseline template definitions into custom enterprise key: Create Chart of Depreciation MAFI
+4,FINSC_LEDGER,Configure Representative Ledger,Ledger Level,"Fixes variant start-date error (K4 vs V3). Assign Company Codes to Representative Ledger frameworks to control divergent schedules"
+5,SPRO,Define Custom Ledger Group,Ledger Level,Create specialized consolidation tracking asset group: MARL to support uniform multi-currency evaluation layers
+6,SPRO,Assign Chart of Depreciation to Company Code,Company Code,"Link Company Codes M001, M002, M003 straight to custom Chart of Depreciation MAFI"
+7,SPRO,Specify Use of Parallel Currencies,Company Code,Validates currency structures across ledgers: Aligns Group Currency Type 30 (USD) with Local Currency Type 10 (INR/EUR)
+8,OBCL,Assign Non-Taxable Transaction Codes,Company Code,"Fixes missing tax error. Map Input Tax V0 and Output Tax A0 as fallback indicators for non-taxable asset transactions"
+9,SPRO,Specify Asset Account Determination Keys,Client Level,"Deploy balance ledger mapping groups: 1000 (Land), 2000 (Buildings), 3000 (Machinery), 4000 (Vehicles), 5000 (Furniture), 6000 (IT), 7000 (Intangibles)"
+10,SPRO,Create Screen Layout Control Rules,Client Level,"Copy and define data visibility rules: M1LA (Land), M1BU (Buildings), M1PM (Machinery), M1VE (Vehicles), M1FF (Furniture), M1IE (IT), M1IA (Intangibles)"
+11,AS08,Define Asset Number Range Intervals,Company Code,Establish dedicated subledger number series blocks per asset group type (e.g. Land: 3000000000 - 3999999999)
+12,SPRO,Define Asset Classes,Client Level,Bind Account Determination Keys and Screen Layout Rules together into single master selection entities
+13,SPRO,Define Technical Clearing Account,Company Code,Establish G/L 80000001 (Asset Tech Clearing) as a Balance Sheet Reconciliation link for integrated acquisition pipelines
+14,ACSETS,Specify Additional Account Assignment Objects,Company Code,Map active Cost Centers and Profit Centers to update dynamically during ongoing period depreciation posting runs
+15,SPRO,Define Depreciation Calculation Methods,Client Level,Configure underlying Base Methods and Multi-Level Methods managing Straight Line (SLM) and Written Down Value (WDV) calculations
+16,SPRO,Maintain and Activate Depreciation Keys,Client Level,"Construct tracking calculation keys (MA01 through MA15) and flip status to Active to enable automated evaluation loops"
+17,FAA_CMP_LDT,Asset Legacy Data Transfer Settings,Company Code,"Fixes incomplete year error. Input asset cut-over dates, set control state flag to 2, and explicitly allow document postings"
+18,AS01,Create Asset Master Record,Master Data,Deploy actual individual asset identifiers within specific classes to initialize subledger data tracking blocks
+19,F-90,Post Integrated Asset Acquisition,Transaction Data,Execute asset acquisitions via manual posting processes using Posting Key 70 (Asset Debit) and Transaction Type 100
+20,FAGLGVTR,Execute General Ledger Balance Carryforward,Period Closing,Run annual background system routine to migrate preceding cash book balances and active asset values into the next fiscal year
+21,AW01N,Execute Asset Explorer Analysis,Reporting Cockpit,Central review console utilized to audit planned period depreciation fractions down to precise day counts across active ledgers
+22,F-92,Post Asset Retirement with Revenue,Transaction Data,Execute formal asset de-registrations through sales workflows; calculates profit/loss variances automatically against net book value
+23,OBB8,Maintain Cash Discount Payment Terms,Company Code,Configure terms containing explicit vendor incentives (e.g. 5% reduction). Asset valuation automatically scales down by the discount factor rather than booking to a P&L account
+24,ABUMN,Execute Internal Asset Transfer,Transaction Data,Perform intrasystem asset splits or volume transfers between distinct inventory codes within the same company code boundaries
