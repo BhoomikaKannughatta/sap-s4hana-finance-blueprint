@@ -1,8 +1,10 @@
-Company Code,House Bank ID,Account ID,Bank Name,Main G/L Account,Sub-Account G/L,Clearing Type,Payment Method (FBZP)
-M001,HDFC1,HD01,HDFC Bank Bangalore,12401000,12401001,Incoming Clearing,E (NEFT/RTGS)
-M001,HDFC1,HD01,HDFC Bank Bangalore,12401000,12401002,Outgoing Clearing,E (NEFT/RTGS)
-M001,ICIC1,IC01,ICICI Bank Bangalore,12401100,12401102,Outgoing Clearing,E (NEFT/RTGS)
-M002,SBIN1,SB01,SBI Bank Mumbai,12402000,12402002,Outgoing Clearing,E (NEFT/RTGS)
-M002,AXIS1,AX01,Axis Bank Mumbai,12402100,12402102,Outgoing Clearing,E (NEFT/RTGS)
-M003,DEUT1,DB01,Deutsche Bank Frankfurt,12403000,12403002,Outgoing Clearing,S (SEPA Credit Transfer)
-M003,COMM1,CB01,Commerzbank Berlin,12403100,12403102,Outgoing Clearing,S (SEPA Credit Transfer)
+Asset Class Key,Transaction Code,Configuration Step Name,Technical Parameters,Operational Target Value & Business Logic Context
+C_J_01,FS00,Create Cash G/L Master Data,G/L Type: Cash Account,"Deploy local petty cash book tracking accounts for target plant locations"
+C_J_02,FBCJC1,Define Cash Journal Number Ranges,Object: FBCJ_DOC,"Establish isolated, contiguous document number range intervals per company code"
+C_J_03,FBCJC0,Set Up Cash Journal Ledger Codes,Table: T042D,"Assign unique cash journal IDs, currency settings, and link specific G/L accounts"
+C_J_04,FBCJC2,Maintain Cash Business Transactions,Posting Keys: 40 / 50,"Predefine standard operational events: cash receipts, bank deposits, and cash expenses"
+C_J_05,FBCJC3,Set Up Print Parameters for Cash Journal,Program: RFCASH00,Map formal accounting output print layout forms for manual voucher generation
+H_B_01,FI12,Create House Bank Identifier,Client Level,"Define core structural codes: HDFC1 (M001), ICIC1 (M001), SBIN1 (M002), AXIS1 (M002), DEUT1 (M003), COMM1 (M003)"
+H_B_02,FI01,Create Underlying Bank Keys,Bank Country: IN / DE,"Register structural bank coordinates, official clearing codes, and specific branch locations"
+H_B_03,Fiori App,Create Bank Account ID (S/4HANA),Master Data Level,Deploy discrete Account IDs (HD01 / IC01 / SB01 / AX01 / DB01 / CB01) via SAP Fiori central cockpit
+H_B_04,FS00,Map Bank G/L Group Accounts,G/L Field Assignment,Link structural codes and specific Account IDs directly inside active bank main ledger segments
