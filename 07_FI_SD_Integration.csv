@@ -1,11 +1,15 @@
-Step,Transaction Code,Configuration Description,Enterprise Entity Key,Assigned Integration Parameters
-1,OX05,Define Sales Organization,SO01 / SO03,SO01 (India Revenue Org) | SO03 (Germany Revenue Org)
-2,OVXI,Define Distribution Channel,DI (Direct Sales),Wholesale and Direct Corporate Sales Distribution Channel
-3,OVXB,Define Division,FI (Filters),Filters and Manufactured Parts Product Division Line
-4,OVX3,Assign Sales Organization to Company Code,Linkage Step,SO01 -> Company Code M001 | SO03 -> Company Code M003
-5,OVXG,Set up Sales Area Execution Node,Structural Framework,Combine: SO01 (Sales Org) -> DI (Dist. Channel) -> FI (Division)
-6,OVX6,Assign Sales Org / Dist. Channel to Plant,Logistics Link,Link SO01 + DI -> Mapped to Production Plant IN01
-7,OVXD,Define Shipping Points,SH01 / SH03,SH01 (Mumbai Outbound Gate) | SH03 (Stuttgart Outbound Gate)
-8,OVXC,Assign Shipping Point to Plant,Logistics Link,Shipping Point SH01 assigned to Plant IN01
-9,VKOA,Revenue Account Determination (ERL Key),Standard Domestic Revenue,Application V / Condition PR00 / SO01 -> G/L 30000000
-10,VKOA,Revenue Account Determination (ERS Key),Sales Deductions / Discounts,Application V / Condition KP01 / SO01 -> G/L 30100000
+Step,Transaction Code,Configuration Step Description,Technical Level,Enterprise Data Mapping & Functional Logic Rules
+1,OVX5,Define Sales Organization,Client Level,"Configure primary revenue units: SO01 (Mahayana India Sales), SO03 (Mahayana Germany Sales)"
+2,OVXI,Define Distribution Channels,Client Level,Create trade distribution pathways: DI (Direct Wholesale Corporate Sales)
+3,OVXB,Define Material Divisions,Client Level,Establish product segment lines: FI (Filters and Manufactured Parts Division)
+4,OVXD,Define Outbound Shipping Points,Client Level,"Deploy physical logistics docks: SH01 (Mumbai Plant Gate), SH03 (Stuttgart Export Hub)"
+5,OVX3,Assign Sales Organization to Company Code,Linkage Matrix,Link corporate revenue entities directly to legal financial entities: SO01 -> CoCode M001 | SO03 -> CoCode M003
+6,OVXK,Assign Distribution Channel to Sales Org,Linkage Matrix,Authorize transactional distribution pathways: Map Channel DI straight to Sales Orgs SO01 and SO03
+7,OVXA,Assign Division to Sales Organization,Linkage Matrix,Bind corporate product line divisions directly to active revenue execution engines: Map Division FI to SO01 and SO03
+8,OVXG,Set Up Functional Sales Areas,Structural Node,"Combine three dimensions into an operational Sales Area cluster: SO01 (Sales Org) -> DI (Channel) -> FI (Division)"
+9,OVX6,Assign Sales Org and Channel to Plant,Linkage Matrix,Connect commercial channels to physical logistics centers: Map SO01 + DI directly to Production Plant IN01
+10,OVXC,Assign Shipping Points to Plants,Linkage Matrix,Authorize physical delivery execution: Link outbound docks SH01 to Plant IN01 and SH03 to Plant DE01
+11,VOR1,Define Common Distribution Channels,Client Level,Consolidate master data management rules by assigning common customer/pricing keys across sales org rows
+12,VOR2,Define Common Product Divisions,Client Level,Consolidate master data tracking flags by mapping common material master criteria across organizational nodes
+13,VOPAN,Configure Partner Determination Procedures,Client Level,Enforce fundamental commercial partner roles during order creation: SP (Sold-to), BP (Bill-to), PY (Payer), SH (Ship-to)
+14,OVL2,Maintain Shipping Point Determination,Plant Level,Automate shipping rules routing calculations inside sales entries based on Shipping Conditions, Loading Groups, and Plant keys
