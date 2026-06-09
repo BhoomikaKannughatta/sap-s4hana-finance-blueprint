@@ -10,6 +10,6 @@ Step,Transaction Code,Configuration Description,Technical Parameter Key,Target G
 9,OB40,Assign G/L to Purchase Tax Key,Account Key: M1P,10000010,Maps the automated posting pathway for input tax condition types inside the procedure
 10,OB40,Assign G/L to Sales Tax Key,Account Key: M1S,20000010,Maps the automated posting pathway for output tax condition types inside the procedure
 11,OBBG,Assign Tax Procedure to Country,Country Key: IN,N/A,Binds the functional tax execution layout procedure MAIN natively to target country operations
-12,FTXP,Maintain Tax Codes for Country,Tax Codes: V1 / A1,N/A,Defines individual percentage tax codes (e.g., V1 Input Tax 15%, A1 Output Tax 15%)
+12,FTXP,Maintain Tax Codes for Country,Tax Codes: V1 / A1,N/A,"Defines individual percentage tax codes (e.g., V1 Input Tax 15%, A1 Output Tax 15%)"
 13,FB60 / F-43,Execute Inclusive Tax Booking,User Transaction,Dynamic Split,"Calculates taxes backwards from a gross header total (e.g., Gross 10,000 breaks to Cost 8,695.65 + Tax 1,304.35)"
 14,FB60 / F-43,Execute Exclusive Tax Booking,User Transaction,Dynamic Split,"Calculates taxes forward from a net item base (e.g., Net 10,000 adds Tax 1,500 to yield a Vendor Credit of 11,500)"
