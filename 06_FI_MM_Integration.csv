@@ -13,11 +13,11 @@ Step,Transaction Code,Configuration Description,Technical Scope,Enterprise Data 
 12,OMSY,Initialize Material Management Periods,Company Code,"Set initial operational booking periods: Initialize Company Codes M001, M002, M003 to Year 2026 / Period 05"
 13,OMS2,Define Material Attribute Updates,Valuation Area,"For standard material types (ROH, HALB, FERT), explicitly activate Quantity and Value tracking at Plant level"
 14,IMG-MM,Set Purchasing Price Tolerances,Company Code,Configure Price Variance parameters (PE / SE tolerance keys) to limit Purchase Order pricing exceptions
-15,OMC0,Set Goods Receipt (GR) Tolerance Limits,Company Code,Define tolerance thresholds (B1 / B2 / VP keys) governing inventory receipt receipt volume shortages
+15,OMC0,Set Goods Receipt (GR) Tolerance Limits,Company Code,Define tolerance thresholds (B1 / B2 / VP keys) governing inventory receipt volume shortages
 16,OMR2,Configure Default Invoice Tax Codes,Company Code,Map automatic tax configuration default flags derived from regional country tax procedures
 17,OKB9,Default Account Assignment Rules,Company Code,Predefine fallback Cost Centers or Profit Centers to catch unexpected inventory variance flows
 18,OMR6,Set Invoice Verification Tolerances,Company Code,"Establish strict invoice limit blocks using tolerance keys: AN, AP, BD, BR, BW, DQ, DW, KW, PP, PS"
 19,OMX2,Define Material Ledger Types,Client Level,Configure master parallel valuation structure: Create Material Ledger Type MAML tracking Group currency
 20,OMX3,Assign ML Type to Valuation Area,Valuation Area,Bind active Plants IN01, IN02, and DE01 directly to the corporate Material Ledger Type MAML
-21,OMX1,Activate Material Ledger Areas,Valuation Area,Turn status flag to Active and set Price Determination valuation rule to 2 (Transaction-Based Valuation)
+21,OMX1,Activate Material Ledger Areas,Valuation Area,"Turn status flag to Active and set Price Determination valuation rule to 2 (Transaction-Based Valuation)"
 22,CKMSTART,Material Ledger Production Startup,System Activation,Execute mandatory database activation routine to finalize ledger structures for Plants IN01, IN02, DE01
