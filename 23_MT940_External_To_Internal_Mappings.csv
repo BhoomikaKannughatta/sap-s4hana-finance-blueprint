@@ -1,0 +1,6 @@
+External Key,Posting Rule,Posting Area,Debit Account Reference,Credit Account Reference,Document Type,Operational Accounting Definition & Statement Trigger Use Case
+NCHG,VWBC,1,60200000 (Bank Charges Expense),12401000 (Bank Main G/L),AB,Direct P&L Expense Posting: Captures external bank account fees or transaction costs directly from SWIFT Tag 61
+NTFR,ZEBS,2,12401002 (Bank Outgoing Clearing),12401000 (Bank Main G/L),SA,Outgoing Subledger Settlement: Debits open check/wire sub-ledgers to balance out ongoing payment items
+NTRF,ZEBS,2,12401000 (Bank Main G/L),12401001 (Bank Incoming Clearing),SA,Incoming Subledger Settlement: Credits open collections sub-ledgers to balance out received customer wire line items
+NCHK,CKOG,2,12401012 (Check Outgoing Subaccount),12401000 (Bank Main G/L),SA,Check Presentation Settlement: Uses the unique check number extracted from Tag 61 to clear the open check ledger
+NMSC,ZWMI,1,12401000 (Bank Main G/L),40100200 (Bank Interest Income),AB,Direct Miscellaneous Income Posting: Real-time recognition of incoming bank credits and monthly interest streams
