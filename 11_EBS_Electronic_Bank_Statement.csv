@@ -1,7 +1,7 @@
 Step,Transaction Code,Configuration Step Description,Technical Level,System Mapping Parameter Keys & Functional Business Rules
 1,SPRO / Manual BRS,Create Master Account Symbols,Chart of Accounts,"Define abstract clearing tags: M001MB (Main Cash), M001CI (Check In), M001CO (Check Out), M001TI (Wire In), M001TO (Wire Out)"
 2,SPRO / Manual BRS,Assign G/L Accounts to Account Symbols,Chart of Accounts,"Map symbols via relative masking filters: Bind M001MB to 12401000, M001CI to 12401011++, M001CO to 12401012++, M001TI to 12401013++, M001TO to 12401014++"
-3,SPRO / Manual BRS,Create Keys for Posting Rules,Client Level,Create four-digit functional clearing alphanumeric execution identifiers: M0CI, M0CO, M0TI, M0TO, VWBC
+3,SPRO / Manual BRS,Create Keys for Posting Rules,Client Level,"Create four-digit functional clearing alphanumeric execution identifiers: M0CI, M0CO, M0TI, M0TO, VWBC"
 4,SPRO / Manual BRS,Define Detailed Posting Rules,Client Level,"Map debit/credit posting types: Area 1 (General Ledger Bank Main) vs Area 2 (Subledger / Clearing Accounts using standard document type SA)"
 5,SPRO / Manual BRS,Define Variants for Manual Statement,Client Level,Copy baseline text entry mask frameworks and activate variant 9000076543 to structure user field alignments inside transaction FF67
 6,FCHI,Create Outbound Check Lot Intervals,Company Code,Define valid numeric check issuance series boundaries per bank account to govern outbound paper payments
