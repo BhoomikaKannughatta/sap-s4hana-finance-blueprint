@@ -1,0 +1,8 @@
+Asset Class Key,Description,Assigned Main G/L Account,Accumulated Depreciation G/L,Depreciation Expense G/L,Depreciation Keys & Useful Life Rules
+Asset_1110,Freehold Land,11100000,N/A (Non-Depreciating),N/A,No depreciation calculated / Value tracked via raw historical cost
+Asset_1111,Factory Buildings,11110000,11110099 (Acc. Dep),70100000 (Dep. Exp),Straight Line Method (SLM) | 30 Years Useful Life / Standard Scrap 5%
+Asset_1112,Plant & Machinery,11120000,11120099 (Acc. Dep),70100000 (Dep. Exp),Written Down Value (WDV) | 15 Years Useful Life / Dynamic shift rule
+Asset_1113,Company Vehicles,11130000,11130099 (Acc. Dep),70100000 (Dep. Exp),Straight Line Method (SLM) | 7 Years Useful Life / High wear adjustments
+Asset_1114,Office Furniture & Fixtures,11140000,11140099 (Acc. Dep),70100000 (Dep. Exp),Straight Line Method (SLM) | 10 Years Useful Life / Uniform corporate rate
+Asset_1115,IT Equipment & Servers,11150000,11150099 (Acc. Dep),70100000 (Dep. Exp),Written Down Value (WDV) | 3 Years Useful Life / Rapid technology cycles
+Asset_1120,Intangible Software Licenses,11200000,11200099 (Acc. Amort),70100000 (Dep. Exp),Straight Line Amortization | 5 Years Useful Life / Zero scrap value
