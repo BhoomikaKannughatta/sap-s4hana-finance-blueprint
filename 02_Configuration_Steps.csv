@@ -1,0 +1,27 @@
+Step,Transaction Code,Configuration Step Name,IMG Menu Path,Technical Target Values
+1,OX15,Define Company,Enterprise Structure -> Definition -> Financial Accounting,Create Company ID: MGT
+2,OX02,Define Company Code,Enterprise Structure -> Definition -> Financial Accounting,Create Codes: M001 M002 M003
+3,OX16,Assign Company Code to Company,Enterprise Structure -> Assignment -> Financial Accounting,Link M001 M002 M003 to Company MGT
+4,OB13,Define Chart of Accounts,Financial Accounting -> General Ledger Accounting -> Master Data,Create Operative: MAOP | Group: MAGR | Country: MAIN
+5,OB62,Assign COA to Company Code,Financial Accounting -> General Ledger Accounting -> Master Data,M001/M002/M003 -> MAOP (Operative COA)
+6,OBD4,Define G/L Account Groups,Financial Accounting -> General Ledger Accounting -> Master Data,Setup Groups: ASSET LIAB EQTY INCO EXPE
+7,OB53,Define Retained Earnings Account,Financial Accounting -> General Ledger Accounting -> Master Data,Assign Transaction Key X to G/L Account 21200000
+8,FINSC_LEDGER,Define Ledgers & Currency Settings,Financial Accounting -> Global Settings -> Ledgers,Configure 0L (Standard/K4) & L1 (Non-Leading/V3)
+9,OBBO,Define Posting Period Variant,Financial Accounting -> Global Settings -> Ledgers -> PPV,Create Variant: MAPV
+10,OBBP,Assign PPV to Company Code,Financial Accounting -> Global Settings -> Ledgers -> PPV,Link M001 M002 M003 to Variant MAPV
+11,OB52,Open and Close Posting Periods,Financial Accounting -> Global Settings -> Ledgers -> PPV,Maintain open intervals for Account Types + A D K M S
+12,OBC4,Define Field Status Variants,Financial Accounting -> Global Settings -> Ledgers -> Fields,Create FSV Variant: MAFS
+13,OBC5,Assign Field Status Variant to Co. Code,Financial Accounting -> Global Settings -> Ledgers -> Fields,Link M001 M002 M003 to Variant MAFS
+14,S_ALR_87003642,Activate Document Splitting,Financial Accounting -> General Ledger Accounting -> Business Transactions,Activate Item Splitting Methods by Account Group
+15,ORFA,Asset Accounting Customizing Central Menu,Financial Accounting -> Asset Accounting,Central wizard control node for Chart of Depreciation
+16,OBYZ,Define Tax Calculation Procedures,Financial Accounting -> Global Settings -> Tax on Sales/Purchases,Create condition types and sequence layout for GST/WHT
+17,OB09,Exchange Rate Loss/Gain Account Determination,Financial Accounting -> General Ledger -> Business Transactions -> Closing,Assign Realized Forex G/L 80200000 / Valuation G/L 80250000
+18,OBYR,Configure Vendor Special G/L Indicators,Financial Accounting -> Accounts Payable -> Business Transactions -> Down Payments,Map Reconciliation G/L 23100000 to Advance G/L 12300000 (Indicator A)
+19,OBXR,Configure Customer Special G/L Indicators,Financial Accounting -> Accounts Receivable -> Business Transactions -> Down Payments,Map Reconciliation G/L 12200000 to Advance G/L 12350000 (Indicator A)
+20,OT51,Define Electronic Bank Statement (EBS) Keys,Financial Accounting -> Bank Accounting -> Business Transactions -> Electronic Bank Statement,Setup transaction mapping codes (e.g. NCHG for charges)
+21,OT52,Maintain EBS Posting Rules,Financial Accounting -> Bank Accounting -> Business Transactions -> Electronic Bank Statement,Define debit/credit account posting actions for statement keys
+22,DMEEX,Maintain Extended DMEE Format Trees,Financial Accounting -> Accounts Payable -> Business Transactions -> APP -> Payment Medium,Build XML payment structure rules for corporate clearing
+23,OBPM1,Assign Payment Medium Formats,Financial Accounting -> Accounts Payable -> Business Transactions -> APP -> Payment Medium,Link DMEE format trees directly to payment system nodes
+24,OBPM4,Payment Medium Format Selection Settings,Financial Accounting -> Accounts Payable -> Business Transactions -> APP -> Payment Medium,Configure variant distributions for multi-currency automated runs
+25,WE20,Maintain IDoc Partner Profiles,Cross-Application Components -> ALE/EDI Business Processes,Establish partner type logical systems for asynchronous bank messaging
+26,BD51,Define IDoc Inbound Functional Modules,Cross-Application Components -> ALE/EDI Business Processes,Register background BAPI modules for customer/vendor data migrations
