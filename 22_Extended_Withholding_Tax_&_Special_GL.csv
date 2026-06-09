@@ -3,7 +3,7 @@ Step,Transaction Code,Customizing Configuration Target,Technical Key / Code,Targ
 2,SPRO / Extended WHT,Maintain Factory Business Places,Business Place: Local,N/A,Registers localized organizational physical hubs to track statutory withholding profiles
 3,SPRO / Extended WHT,Define WHT Type for Invoice Posting,Type: Invoice,N/A,Triggers dynamic calculations evaluating and deducting tax percentages at the point of invoice logging
 4,SPRO / Extended WHT,Define WHT Type for Payment Posting,Type: Payment,N/A,Enables central invoice proposition settings to capture tax deductions during early down payments
-5,SPRO / Extended WHT,Define Withholding Tax Codes,Tax Codes: IN / IV,N/A,Establishes precise rate codes (e.g., 10% Contractor Deductions under statutory Section 194C)
+5,SPRO / Extended WHT,Define Withholding Tax Codes,Tax Codes: IN / IV,N/A,"Establishes precise rate codes (e.g., 10% Contractor Deductions under statutory Section 194C)"
 6,SPRO / Extended WHT,Assign WHT Types to Company Code,Activation Step,N/A,Binds legal entities directly to withholding deduction roles and flips the EWT active status flag
 7,SPRO / Extended WHT,Define Accounts for WHT to be Paid,Posting Key: WIT,23250001,Maps automated liability accounts to hold deducted tax balances until government remittance
 8,BP,Maintain Vendor Tax Registration Data,Master Data Level,PAN Entry Field,Appends individual vendor permanent numbers to stop automatic penalty taxation loops
