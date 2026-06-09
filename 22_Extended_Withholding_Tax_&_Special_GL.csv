@@ -1,0 +1,14 @@
+Step,Transaction Code,Customizing Configuration Target,Technical Key / Code,Target Reconciliation Link,Functional Logic / Localization Troubleshooting Scenario
+1,SPRO / Extended WHT,Define Regional Section Codes,Section: IND,N/A,Establishes core regional reporting blocks for legislative country filing compliance
+2,SPRO / Extended WHT,Maintain Factory Business Places,Business Place: Local,N/A,Registers localized organizational physical hubs to track statutory withholding profiles
+3,SPRO / Extended WHT,Define WHT Type for Invoice Posting,Type: Invoice,N/A,Triggers dynamic calculations evaluating and deducting tax percentages at the point of invoice logging
+4,SPRO / Extended WHT,Define WHT Type for Payment Posting,Type: Payment,N/A,Enables central invoice proposition settings to capture tax deductions during early down payments
+5,SPRO / Extended WHT,Define Withholding Tax Codes,Tax Codes: IN / IV,N/A,Establishes precise rate codes (e.g., 10% Contractor Deductions under statutory Section 194C)
+6,SPRO / Extended WHT,Assign WHT Types to Company Code,Activation Step,N/A,Binds legal entities directly to withholding deduction roles and flips the EWT active status flag
+7,SPRO / Extended WHT,Define Accounts for WHT to be Paid,Posting Key: WIT,23250001,Maps automated liability accounts to hold deducted tax balances until government remittance
+8,BP,Maintain Vendor Tax Registration Data,Master Data Level,PAN Entry Field,Appends individual vendor permanent numbers to stop automatic penalty taxation loops
+9,SPRO / Logistics,Maintain Company Code Settings,Localization Fix,N/A,Fixes TDS certificate range error by explicitly defining numbering class structures for India tax profiles
+10,OBYR,Configure Vendor Special G/L Indicators,Indicator: A (Down Pmt),"Link: 23100000 -> 12300000","Maps advance vendor postings to bypass regular accounts payable ledgers via transaction F-48"
+11,OBXR,Configure Customer Special G/L Indicators,Indicator: A (Down Pmt),"Link: 12200000 -> 12350000","Maps advance customer receipts to bypass regular accounts receivable ledgers via transaction F-29"
+12,F-48,Post Vendor Advance Down Payment,User Transaction,Special G/L Code,"Fixes cash volume limit error. Accounts for down payment taxes at payment point prior to invoice tracking"
+13,F-54,Execute Down Payment Clearing,User Transaction,Clearing Variant,Reconciles outstanding advance assets directly against incoming standard vendor invoice balance layers
