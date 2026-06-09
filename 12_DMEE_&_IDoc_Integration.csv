@@ -1,7 +1,10 @@
-Interface Module Type,Technical Transaction,Configuration Parameter Key,Target Underlying Object / Table,Operational Logic & Target Use Case
-Data Medium Exchange Engine,DMEEX,Format Tree: SEPA_CT,XML File Schema Structure,Generates automated ISO 20022 XML files during F110 runs
-Data Medium Exchange Engine,OBPM1,Payment Medium Format,Link: SEPA_CT format tree,Maps raw output parameters to international XML specifications
-Data Medium Exchange Engine,OBPM4,Format Variant Selection,REGUH / REGUP Master Tables,Controls execution filters for vendor bank clearing documents
-ALE / IDoc EDI Layer,WE20,Partner Profile Setup,Logical Partner Type: LS / Bank Node,Governs background electronic messaging protocols with host bank
-ALE / IDoc EDI Layer,BD51,Inbound Functional Modules,BAPI_CUSTOMER_CREATEFROMDATA1,Enables background transaction calls to register master datasets
-ALE / IDoc EDI Layer,WE21,Maintain Transactional Ports,File Port Definition,Configures standard filesystem pathways for electronic bank data ingestion
+Step,Transaction Code,Configuration Step Description,Technical Parameter Key,Target Underlying Table,Operational Business Rule & Output Generation Logic
+1,DMEEX,Maintain Extended Format Tree,Format Tree: IN_CGI_XML_CT,N/A,Constructs the custom mapping node structure matching ISO 20022 XML bank specifications
+2,OBPM1,Define Payment Medium Formats,Format: IN_CGI_XML_CT,N/A,Registers the outbound electronic structural format framework inside the Payment Medium Workbench
+3,OBPM2,Maintain Payment Format Layout Rules,Format: IN_CGI_XML_CT,N/A,Enforces text management constraints and structural sorting rules for file string blocks
+4,OBPM3,Assign Payment Medium Formats to Text Lines,Format: IN_CGI_XML_CT,N/A,Binds custom payment advice forms to corresponding clearing format layout fields
+5,OBPM4,Create Payment Medium Format Variants,Company Code Selection,REGUH / REGUP,"Configures unique variants per bank account; maps structural data elements dynamically out of payment log tables"
+6,FI01,Maintain Corporate Bank Keys,Vendor Master Record,LFA1 / LFBK,Configures routing coordinates for target vendor accounts to pass verification during payment runs
+7,FBZP,Configure APP Bank Selection Rules,Paying Company Code,T042B / T042I,Establishes priority rankings for house bank assets to clear underlying accounting open items
+8,F110,Execute Automated Payment Run,User Transaction,REGUH / REGUP,Clears open invoices and posts down a debit to the vendor and a credit to the bank outgoing clearing ledger
+9,DME Administration,Extract Final DME Document Stream,DME Contents Export,N/A,Extracts and writes out the final file system payment string payload for bank collection processing
