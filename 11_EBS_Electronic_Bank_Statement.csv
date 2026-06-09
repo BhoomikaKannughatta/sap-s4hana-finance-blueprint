@@ -1,0 +1,5 @@
+External Transaction Key,Posting Rule Key,Posting Area,Debit Account Parameter,Credit Account Parameter,Document Type (OBA7),Business Meaning / Posting Action
+NCHG,CHGS,1,Debit: 60200000 (Bank Charges Expense),Credit: 12401000 (Bank Main G/L),AB,"Bank ledger entry for statement processing fees, OD, or late charges"
+NTFR,ZEBS,2,Debit: 12401002 (Bank Outgoing Clearing),Credit: 12401000 (Bank Main G/L),SA,Clears presentation ledger: Debit clearing subledger and Credit Main bank
+NTRF,ZEBS,2,Debit: 12401000 (Bank Main G/L),Credit: 12401001 (Bank Incoming Clearing),SA,Clears collection ledger: Debit Main bank and Credit clearing subledger
+NCHK,CKOG,2,Debit: 12401012 (Check Outgoing Subaccount),Credit: 12401000 (Bank Main G/L),SA,Validates check presentations against raw local cash book balances
