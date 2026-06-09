@@ -1,5 +1,15 @@
-External Transaction Key,Posting Rule Key,Posting Area,Debit Account Parameter,Credit Account Parameter,Document Type (OBA7),Business Meaning / Posting Action
-NCHG,CHGS,1,Debit: 60200000 (Bank Charges Expense),Credit: 12401000 (Bank Main G/L),AB,"Bank ledger entry for statement processing fees, OD, or late charges"
-NTFR,ZEBS,2,Debit: 12401002 (Bank Outgoing Clearing),Credit: 12401000 (Bank Main G/L),SA,Clears presentation ledger: Debit clearing subledger and Credit Main bank
-NTRF,ZEBS,2,Debit: 12401000 (Bank Main G/L),Credit: 12401001 (Bank Incoming Clearing),SA,Clears collection ledger: Debit Main bank and Credit clearing subledger
-NCHK,CKOG,2,Debit: 12401012 (Check Outgoing Subaccount),Credit: 12401000 (Bank Main G/L),SA,Validates check presentations against raw local cash book balances
+Step,Transaction Code,Configuration Step Description,Technical Level,System Mapping Parameter Keys & Functional Business Rules
+1,SPRO / Manual BRS,Create Master Account Symbols,Chart of Accounts,"Define abstract clearing tags: M001MB (Main Cash), M001CI (Check In), M001CO (Check Out), M001TI (Wire In), M001TO (Wire Out)"
+2,SPRO / Manual BRS,Assign G/L Accounts to Account Symbols,Chart of Accounts,"Map symbols via relative masking filters: Bind M001MB to 12401000, M001CI to 12401011++, M001CO to 12401012++, M001TI to 12401013++, M001TO to 12401014++"
+3,SPRO / Manual BRS,Create Keys for Posting Rules,Client Level,Create four-digit functional clearing alphanumeric execution identifiers: M0CI, M0CO, M0TI, M0TO, VWBC
+4,SPRO / Manual BRS,Define Detailed Posting Rules,Client Level,"Map debit/credit posting types: Area 1 (General Ledger Bank Main) vs Area 2 (Subledger / Clearing Accounts using standard document type SA)"
+5,SPRO / Manual BRS,Define Variants for Manual Statement,Client Level,Copy baseline text entry mask frameworks and activate variant 9000076543 to structure user field alignments inside transaction FF67
+6,FCHI,Create Outbound Check Lot Intervals,Company Code,Define valid numeric check issuance series boundaries per bank account to govern outbound paper payments
+7,FCHN,Analyze Check Register Logs,Reporting Cockpit,Central tracking directory used to cross-reference issued check positions against structural presentation status records
+8,FCHU,Automate Check Reference Update,Batch Processing,Background utility mapping physical check series codes straight into Document Allocation fields to serve as an identical matching key
+9,OKB9,Maintain Automatic Cost Assignments,Company Code,"Bypasses FEBAN posting errors. Maps primary P&L statement cost elements (e.g. 40001001 / 40001002) to specific Cost Centers"
+10,FAGL3KEH,Maintain Default Balance Sheet Profit Centers,Company Code,Ensures document balance constraints remain met by matching unassigned bank main accounts to a default fallback Profit Center
+11,SPRO / EBS,Create Master Transaction Types,Client Level,Establish the SWIFT core structural routing parsing profile header (e.g. Transaction Type profile M001)
+12,SPRO / EBS,Assign External MT940 Codes to Rules,Procedure Level,"Bind statement keys to custom posting codes: Map NCHK (Check Out) -> M0CO, NTRF (Wire Transfer) -> M0TI, NCHG (Charges) -> VWBC"
+13,SPRO / EBS,Assign Corporate Bank Accounts to Types,Bank Account Level,Connect external swift file fields (Bank Key and Account ID) directly to internal transaction profile variants
+14,SPRO / EBS,Define Advanced Statement Search Strings,Client Level,Configure dynamic conditional parsing search string rules to extract text segments from MT940 Tag 86 to override standard cost routing
