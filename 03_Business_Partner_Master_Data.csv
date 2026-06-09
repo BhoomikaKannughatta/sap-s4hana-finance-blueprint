@@ -7,15 +7,15 @@ Step,Transaction Code,Configuration Step Description,Technical Level,IMG Customi
 6,OBAR,Assign Number Ranges to Customer Account Groups,Client Level,Financial Accounting -> Accounts Receivable -> Customer Accounts -> Master Data -> Assign Number Ranges
 7,OBA3,Configure Vendor/Customer Payment Tolerance Groups,Company Code,Financial Accounting -> Accounts Receivable and Payable -> Business Transactions -> Open Item Clearing -> Define Tolerances
 8,BUCF,Define Business Partner Number Ranges,Client Level,Cross-Application Components -> SAP Business Partner -> Business Partner -> Basic Settings -> Number Ranges and Groupings
-9,SPRO,Define BP Groupings and Assign Number Ranges,Client Level,Cross-Application Components -> SAP Business Partner -> Business Partner -> Basic Settings -> Number Ranges and Groupings -> Define Groupings
+9,SPRO,Define BP Groupings and Assign Number Ranges,Client Level,"Cross-Application Components -> SAP Business Partner -> Business Partner -> Basic Settings -> Number Ranges and Groupings -> Define Groupings and Assign Number Ranges"
 10,MDS_CUST_VND_V_LINK,Define Number Assignment for Direction BP to Vendor,Client Level,Cross-Application Components -> Master Data Synchronization -> Customer/Vendor Integration -> Business Partner Settings -> Settings for Vendor Integration -> Assign Numbers
 11,MDS_CUST_VND_C_LINK,Define Number Assignment for Direction BP to Customer,Client Level,Cross-Application Components -> Master Data Synchronization -> Customer/Vendor Integration -> Business Partner Settings -> Settings for Customer Integration -> Assign Numbers
-12,FS00,Create AP/AR Reconciliation G/L Accounts,Master Data,Deploy subledger alignment clearing accounts (e.g. Domestic Payables 23100000 / Domestic Receivables 12200000)
-13,BP,Create Vendor and Customer Master Data Records,End User,Execute unified Business Partner cockpit extending roles FLVN00 (FI Vendor) | FLVN01 (MM Vendor) | FLCU00 (FI Customer) | FLCU01 (SD Customer)
-14,OBA7,Verify Document Types for Subledger Postings,Client Level,Financial Accounting -> Financial Accounting Global Settings -> Document -> Document Types (Verify KR / KZ / KG / DR / DZ / DG)
+12,FS00,Create AP/AR Reconciliation G/L Accounts,Master Data,"Deploy subledger alignment clearing accounts (e.g. Domestic Payables 23100000 / Domestic Receivables 12200000)"
+13,BP,Create Vendor and Customer Master Data Records,End User,"Execute unified Business Partner cockpit extending roles FLVN00 (FI Vendor) | FLVN01 (MM Vendor) | FLCU00 (FI Customer) | FLCU01 (SD Customer)"
+14,OBA7,Verify Document Types for Subledger Postings,Client Level,"Financial Accounting -> Financial Accounting Global Settings -> Document -> Document Types (Verify KR, KZ, KG, DR, DZ, DG)"
 15,FBN1,Define Number Ranges for Subledger Document Types,Company Code,Financial Accounting -> Financial Accounting Global Settings -> Document -> Document Number Ranges -> Maintain for Co. Codes
 16,F-43,Post Standard Vendor Invoice (Legacy Frame),Transaction Data,Financial Accounting -> Accounts Payable -> Document Entry -> Invoice -> General Posting (Alternately use FB60)
 17,F-22,Post Standard Customer Invoice (Legacy Frame),Transaction Data,Financial Accounting -> Accounts Receivable -> Document Entry -> Invoice -> General Posting (Alternately use FB70)
 18,OB09,Exchange Rate Loss/Gain Account Determination,Company Code,"Financial Accounting -> General Ledger Accounting -> Business Transactions -> Closing -> Valuate -> Foreign Currency Valuation -> Assign G/L Accounts"
-19,FBL1N,Generate Vendor Line Item Display Reports,Reporting,Financial Accounting -> Accounts Payable -> Account -> Display/Change Line Items (Tracks open items, cleared items, and special G/L indicators)
-20,FBL5N,Generate Customer Line Item Display Reports,Reporting,Financial Accounting -> Accounts Receivable -> Account -> Display/Change Line Items (Tracks open items, cleared items, and special G/L indicators)
+19,FBL1N,Generate Vendor Line Item Display Reports,Reporting,"Financial Accounting -> Accounts Payable -> Account -> Display/Change Line Items (Tracks open items, cleared items, and special G/L indicators)"
+20,FBL5N,Generate Customer Line Item Display Reports,Reporting,"Financial Accounting -> Accounts Receivable -> Account -> Display/Change Line Items (Tracks open items, cleared items, and special G/L indicators)"
