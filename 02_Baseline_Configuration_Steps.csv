@@ -1,15 +1,31 @@
 Step,Transaction Code,Configuration Step Name,IMG Menu Path,Technical Target Values
-1,OX15,Define Company,Enterprise Structure -> Definition -> Financial Accounting,Create Company ID: MGT
-2,OX02,Define Company Code,Enterprise Structure -> Definition -> Financial Accounting,Create Codes: M001 M002 M003
-3,OX16,Assign Company Code to Company,Enterprise Structure -> Assignment -> Financial Accounting,Link M001 M002 M003 to Company MGT
-4,OB13,Define Chart of Accounts,Financial Accounting -> General Ledger Accounting -> Master Data,Create Operative: MAOP | Group: MAGR | Country: MAIN
-5,OB62,Assign COA to Company Code,Financial Accounting -> General Ledger Accounting -> Master Data,M001/M002/M003 -> MAOP (Operative COA)
-6,OBD4,Define G/L Account Groups,Financial Accounting -> General Ledger Accounting -> Master Data,Setup Groups: ASSET LIAB EQTY INCO EXPE
-7,OB53,Define Retained Earnings Account,Financial Accounting -> General Ledger Accounting -> Master Data,Assign Transaction Key X to G/L Account 21200000
-8,FINSC_LEDGER,Define Ledgers & Currency Settings,Financial Accounting -> Global Settings -> Ledgers,Configure 0L (Standard/K4) & L1 (Non-Leading/V3)
-9,OBBO,Define Posting Period Variant,Financial Accounting -> Global Settings -> Ledgers -> PPV,Create Variant: MAPV
-10,OBBP,Assign PPV to Company Code,Financial Accounting -> Global Settings -> Ledgers -> PPV,Link M001 M002 M003 to Variant MAPV
-11,OB52,Open and Close Posting Periods,Financial Accounting -> Global Settings -> Ledgers -> PPV,Maintain open intervals for Account Types + A D K M S
-12,OBC4,Define Field Status Variants,Financial Accounting -> Global Settings -> Ledgers -> Fields,Create FSV Variant: MAFS
-13,OBC5,Assign Field Status Variant to Co. Code,Financial Accounting -> Global Settings -> Ledgers -> Fields,Link M001 M002 M003 to Variant MAFS
-14,S_ALR_87003642,Activate Document Splitting,Financial Accounting -> General Ledger Accounting -> Business Transactions,Activate Item Splitting Methods by Account Group
+1,OX15,Define Company,Enterprise Structure -> Definition -> Financial Accounting,Create Company ID: MGT (Mahayana Global)
+2,OX02,Define Company Code,Enterprise Structure -> Definition -> Financial Accounting,Create Codes: M001 / M002 / M003
+3,OX16,Assign Company Code to Company,Enterprise Structure -> Assignment -> Financial Accounting,Link M001 / M002 / M003 to Company MGT
+4,OB13,Define Chart of Accounts,"Financial Accounting -> General Ledger Accounting -> Master Data -> G/L Accounts",Create Operative COA: MAOP | Group COA: MAGR | Country COA: MAIN
+5,OB62,Assign COA to Company Code,"Financial Accounting -> General Ledger Accounting -> Master Data -> G/L Accounts",Map M001 / M002 / M003 to Operative COA MAOP
+6,OBD4,Define G/L Account Groups,"Financial Accounting -> General Ledger Accounting -> Master Data -> G/L Accounts",Setup standard numeric account groups: ASSET / LIAB / EQTY / INCO / EXPE
+7,OB53,Define Retained Earnings Account,"Financial Accounting -> General Ledger Accounting -> Master Data -> G/L Accounts",Assign Transaction Key X to Retained Earnings G/L 21200000
+8,OB29,Define Fiscal Year Variant,Financial Accounting -> Global Settings -> Ledgers -> Fiscal Year Variant,Define/Verify global variants: K4 (Jan-Dec) and V3 (Apr-Mar)
+9,OB37,Assign Fiscal Year Variant to Co. Code,Financial Accounting -> Global Settings -> Ledgers -> Fiscal Year Variant,Assign K4 to M001 / M002 / M003 (0L Leading Ledger alignment)
+10,OBBO,Define Posting Period Variant,Financial Accounting -> Global Settings -> Ledgers -> Posting Periods,Create global Posting Period Variant: MAPV
+11,OBBP,Assign Posting Period Variant to Co. Code,Financial Accounting -> Global Settings -> Ledgers -> Posting Periods,Link Company Codes M001 / M002 / M003 to Variant MAPV
+12,OB52,Open and Close Posting Periods,Financial Accounting -> Global Settings -> Ledgers -> Posting Periods,Maintain open fiscal intervals for Account Types (+ A D K M S)
+13,OBC4,Define Field Status Variants,Financial Accounting -> Global Settings -> Ledgers -> Fields,Create master Field Status Variant: MAFS
+14,OBC5,Assign Field Status Variant to Co. Code,Financial Accounting -> Global Settings -> Ledgers -> Fields,Link Company Codes M001 / M002 / M003 to Variant MAFS
+15,OBA0,Define G/L Account Tolerance Groups,Financial Accounting -> General Ledger Accounting -> Business Transactions,Configure tolerance definitions for standard ledger postings
+16,OBA3,Define Customer/Vendor Tolerance Groups,Financial Accounting -> Accounts Receivable and Payable -> Business Transactions,Setup payment clearing differences tolerances for subledgers
+17,OBA4,Define User Tolerance Groups,Financial Accounting -> Global Settings -> Business Transactions,Establish maximum transaction posting amount limits per user ID
+18,OBYZ,Define Tax Calculation Procedures,Financial Accounting -> Global Settings -> Tax on Sales/Purchases,Create condition types and sequence layouts for GST / WHT engines
+19,OBBG,Assign Tax Procedure to Country,Financial Accounting -> Global Settings -> Tax on Sales/Purchases,Map Country IN to Tax Procedure and Country DE to local VAT framework
+20,OKKP,Maintain Controlling Area,Controlling -> General Controlling -> Organization,Create Controlling Area MACO and map Company Codes via cross-company strategy
+21,OKKP,Activate Controlling Area Components,Controlling -> General Controlling -> Organization,Activate components: Cost Centers / Order Management / Profit Centers
+22,S_ALR_87003642,Classify G/L Accounts for Document Splitting,Financial Accounting -> General Ledger Accounting -> Business Transactions,Classify Chart of Accounts MAOP accounts into standard item categories
+23,SPRO,Activate Document Splitting,Financial Accounting -> General Ledger Accounting -> Business Transactions,Enable online document splitting at Controlling Area / Company Code level
+24,FINSC_LEDGER,Define Leading and Non-Leading Ledgers,Financial Accounting -> Global Settings -> Ledgers,Configure 0L (Leading / K4 Variant) and L1 (Non-Leading / V3 Variant)
+25,0KE5,Activate Profit Center Accounting,Controlling -> Profit Center Accounting -> Basic Settings,Set controlling area settings and assign standard hierarchy: MAHA-PC
+26,OKKS,Set Controlling Area Context,Controlling -> Utilities,Set default backend session context to Controlling Area: MACO
+27,SPRO,Define Ledger for CO Version,Financial Accounting -> Global Settings -> Ledgers -> Integration of CO,Map actual CO business streams to target parallel financial ledgers
+28,FINS_CUST_CONS_CHK_P,Company Code Consistency Check,Financial Accounting -> Global Settings -> Tools,Execute mandatory database routine to validate parallel currency settings
+29,FS00,Create G/L Account Master Data,Financial Accounting -> General Ledger Accounting -> Master Data,Deploy operational G/L accounts across asset and liability nodes
+30,FB50,Post General Ledger Document,Financial Accounting -> General Ledger Accounting -> Business Transactions,Execute real-time test postings to validate leading and non-leading ledgers
