@@ -1,0 +1,15 @@
+Step,Transaction Code,Configuration Description,Technical Parameter Key,Target G/L Account,Operational Business Rule & Calculation Logic
+1,OBYZ / OBQ3,Create Tax Calculation Procedure,Procedure: MAIN,N/A,Defines the master sequence engine tracking tax structures across regional country keys
+2,OBYZ / OBQ1,Create Base Tax Condition Type,Condition: M1BT,N/A,Establishes the non-posting calculation anchor line referencing original invoice gross/net values
+3,OBYZ / OBQ1,Create Purchase Input Condition Type,Condition: M1PT,N/A,Triggers calculation routines evaluating incoming vendor logistics invoices
+4,OBYZ / OBQ1,Create Sales Output Condition Type,Condition: M1ST,N/A,Triggers calculation routines evaluating outbound customer billing invoices
+5,OBCN,Create Purchase Tax Account Key,Account Key: M1P,N/A,Establishes a 3-digit routing key to enable automatic posting for incoming inventory taxes
+6,OBCN,Create Sales Tax Account Key,Account Key: M1S,N/A,Establishes a 3-digit routing key to enable automatic posting for outbound revenue taxes
+7,FS00,Create Input Tax Master G/L Account,Account Group: ASSET,10000010,Deploy ledger with Open Item Management (OIM) active and Post Automatically Only checked
+8,FS00,Create Output Tax Master G/L Account,Account Group: LIAB,20000010,Deploy ledger with Open Item Management (OIM) active and Post Automatically Only checked
+9,OB40,Assign G/L to Purchase Tax Key,Account Key: M1P,10000010,Maps the automated posting pathway for input tax condition types inside the procedure
+10,OB40,Assign G/L to Sales Tax Key,Account Key: M1S,20000010,Maps the automated posting pathway for output tax condition types inside the procedure
+11,OBBG,Assign Tax Procedure to Country,Country Key: IN,N/A,Binds the functional tax execution layout procedure MAIN natively to target country operations
+12,FTXP,Maintain Tax Codes for Country,Tax Codes: V1 / A1,N/A,Defines individual percentage tax codes (e.g., V1 Input Tax 15%, A1 Output Tax 15%)
+13,FB60 / F-43,Execute Inclusive Tax Booking,User Transaction,Dynamic Split,"Calculates taxes backwards from a gross header total (e.g., Gross 10,000 breaks to Cost 8,695.65 + Tax 1,304.35)"
+14,FB60 / F-43,Execute Exclusive Tax Booking,User Transaction,Dynamic Split,"Calculates taxes forward from a net item base (e.g., Net 10,000 adds Tax 1,500 to yield a Vendor Credit of 11,500)"

@@ -1,9 +1,0 @@
-Tax Category,Config T-Code,Technical Key / Condition,Account Assignment Rule,Target G/L Account,Business Logic / Transaction Use Case
-Indirect Tax (GST),OBYZ / V/06,CGST (Input),Central GST - Purchase side,23200001,Exclusive Tax Method - Triggers via incoming vendor invoices
-Indirect Tax (GST),OBYZ / V/06,SGST (Input),State GST - Purchase side,23200002,Exclusive Tax Method - Triggers via incoming vendor invoices
-Indirect Tax (GST),OBYZ / V/06,IGST (Input),Integrated GST - Cross-border purchase,23200003,Interstate material / service acquisition tracking
-Indirect Tax (GST),VKOA / VK11,CGST (Output),Central GST - Sales side,23200101,Revenue generation calculation - Inclusive/Exclusive options
-Indirect Tax (GST),VKOA / VK11,SGST (Output),State GST - Sales side,23200102,Revenue generation calculation - Inclusive/Exclusive options
-Direct Tax (Withholding),SPRO Switch,TDS_V1,Section 194C - Contractors,23250001,Withholding tax deducted dynamically at source on vendor booking
-Special G/L (Vendor),OBYR,Indicator A (Down Payment),Reconciliation Link: 23100000 -> 12300000,12300000,Vendor Advance Booking (F-48) / Down Payment Clearing (F-54)
-Special G/L (Customer),OBXR,Indicator A (Down Payment),Reconciliation Link: 12200000 -> 12350000,12350000,Customer Advance Receipt (F-29) / Down Payment Clearing (F-39)
